@@ -16,7 +16,7 @@ This Meteor package encapsulates the NodeJs module "swagger-client" adding a syn
 
 ### jsDoc generated documentation:
 
- - [documentation.md](./documentation.md)
+ - [documentation.md](https://github.com/warehouseman/meteor-swagger-client/blob/master/documentation.md)
 
 ## Evaluating prior to use (getting started):
 

@@ -1,7 +1,7 @@
 /*global Package Npm*/
 Package.describe({
   name: 'warehouseman:meteor-swagger-client',
-  version: '0.1.0',
+  version: '0.1.2',
   summary: 'Immediately interact with RESTful servers, given only'
   + ' their Swagger specification. (beta)',
   git: 'git@github.com:warehouseman/meteor-swagger-client.git',
