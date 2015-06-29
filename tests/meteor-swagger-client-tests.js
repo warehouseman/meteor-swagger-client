@@ -165,6 +165,9 @@ Tinytest.add(
         basicArguments
       , { responseContentType: 'application/json' }
     );
+    console.log(board);
+    console.log("MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  ");
+    console.log(board.data);
 
     response = JSON.parse(board.data);
     infolog('Got the board :: ' + response.name);
