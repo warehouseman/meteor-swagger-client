@@ -5,25 +5,20 @@ Swagger is a powerful tool for creating REST APIs.  With a comprehensive JSON sp
 
 This Meteor package encapsulates the NodeJs module "swagger-client" adding a synchronous version of every asynchronous API method.
 
-### Further information
+### Further information:
 
  - [Typical Swagger API documentation](http://petstore.swagger.io/)
  - [The underlying JSON file](http://codebeautify.org/jsonviewer/ec183d)
  - [The NodeJS module `swagger-client` on GitHub](https://github.com/swagger-api/swagger-js)
 
-### jsDoc generated documentation 
+### jsDoc generated documentation:
 
  - [documentation.md](./documentation.md)
 
-#### Notes to myself :
+## Getting started evaluating prior to use:
 
- - env NODE_OPTIONS='--debug' DEBUG=wm:msc* meteor test-packages ./packages/meteor-swagger-client
- - eslint package.js 
- - eslint meteor-swagger-client.js 
- - eslint tests/meteor-swagger-client-tests.js
- - rm -fr ./jsdoc/  && jsdoc ./*.js -p -d ./jsdoc  --readme ./README.md
- - the following in .bashrc
-
+### Environment variables (eg; in .bashrc) required to run Tinytests
+ 
     * `export MONGO_URL="mongodb://?:?@ds?.mongolab.com:?/meteor-node-trello"`
     * `export TRELLO_SPEC="http://192.168.122.169:8000/TrelloAPI.json"`
     * `export TRELLO_SPEC="https://raw.githubusercontent.com/warehouseman/trello-swagger-generator/master/TrelloAPI.json"`
@@ -36,3 +31,32 @@ This Meteor package encapsulates the NodeJs module "swagger-client" adding a syn
     * `export TRELLO_TOKEN_B="2b64529be4a2a67d4   ???   b3f5a668826a3be52defaca"`
     * `export TRELLO_USER_C="charliewarehouseman"`
     * `export TRELLO_TOKEN_C="3c183da0e7719301b   ???   07b504459c68b07e675ad9a"`
+
+### The command line to run the tests :
+
+#### Minimal
+
+    meteor test-packages ../meteor-swagger-client
+
+#### With logging errors only
+
+    env DEBUG=wm:msc:err meteor test-packages ./packages/meteor-swagger-client
+
+#### With logging all
+
+    env DEBUG=wm:msc:* meteor test-packages ./packages/meteor-swagger-client
+
+#### With logging all and node-inspector
+
+    env NODE_OPTIONS='--debug' DEBUG=wm:msc:* meteor test-packages ../meteor-swagger-client
+
+### The command line to verify coding standards
+
+    eslint package.js 
+    eslint meteor-swagger-client.js 
+    eslint tests/meteor-swagger-client-tests.js
+
+### The command line to generate HTML documentation
+
+    jsdoc ./*.js -p -d ./jsdoc  --readme ./README.md
+
