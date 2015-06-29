@@ -55,7 +55,7 @@ This Meteor package encapsulates the NodeJs module "swagger-client" adding a syn
 
     meteor test-packages ../meteor-swagger-client
 
-You ought to see . . .  ![test results](./test/testrslts.png)
+You ought to see . . .  ![test results](https://raw.githubusercontent.com/warehouseman/meteor-swagger-client/master/tests/testrslts.png)
 
 #### With logging errors only
 
