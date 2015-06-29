@@ -55,6 +55,8 @@ This Meteor package encapsulates the NodeJs module "swagger-client" adding a syn
 
     meteor test-packages ../meteor-swagger-client
 
+You ought to see . . .  ![test results](./test/testrslts.png)
+
 #### With logging errors only
 
     env DEBUG=wm:msc:err meteor test-packages ../meteor-swagger-client

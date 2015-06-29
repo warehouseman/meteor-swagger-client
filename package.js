@@ -2,8 +2,8 @@
 Package.describe({
   name: 'warehouseman:meteor-swagger-client',
   version: '0.1.0',
-  summary: 'Specify the addresses of one or more RESTful servers, and of'
-        + ' their Swagger specs, and interact with them immediately. (beta)',
+  summary: 'Immediately interact with RESTful servers, given only'
+  + ' their Swagger specification. (beta)',
   git: 'git@github.com:warehouseman/meteor-swagger-client.git',
   documentation: 'README.md',
 });
