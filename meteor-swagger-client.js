@@ -120,9 +120,22 @@ SwaggerClients = {
    * @inner
    */
   addRemoteHost: function addRemoteHost(swaggerSpecURL, name) {
-    /** The class' `size` property. */
+    /** 'self' is set to the SwaggerClients namespace.
+     * @type {namespace}
+     */
     var self = SwaggerClients;
+    /**
+     * @description 'proxy' is the dynamically generated client-side
+     * functionality of a remote REST API.
+     * @type {namespace}
+     */
     var proxy = getSwaggerProxy(swaggerSpecURL);
+    /**
+     * @description 'nameHost' is an identifier to use to get the host proxy
+     * later. If none is provided then the Swagger specification element
+     * "info.title" will be taken from within the retrieved JSON file.
+     * @type {string}
+     */
     var nameHost = name || proxy.info.title;
     self.hosts[nameHost] = { proxy: proxy, sync: {} };
     try {
@@ -134,7 +147,7 @@ SwaggerClients = {
   },
   /**
    * Get a previously stored API proxy
-   * @param {string} ttile An identifier of a prevciously stored host proxy.
+   * @param {string} title An identifier of a previously stored host proxy.
    * @function
    * @returns {Swagger}
    * @see {@link SwaggerClients.addRemoteHost}
@@ -212,6 +225,7 @@ const apiComprehension = {
    * each of the methods on the passed in entity.
    * @param  {namespace} entity A Swagger generated entity
    * @return {void}
+   * @this apiComprehension
    * @function
    */
   getEntitiesAndTheirMethods: function getEntitiesAndTheirMethods(entity) {
@@ -232,6 +246,8 @@ const apiComprehension = {
    * scope for calling wrapIt().
    * @param  {namespace} operation A single method on a proxy's entity.
    * @return {void}
+   * @this getEntitiesAndTheirMethods.pkg
+   * @function
    */
   wrapOperation: function wrapOperation(operation) {
     wrapIt(this.map, this.entity.name, operation.nickname, this.entity);

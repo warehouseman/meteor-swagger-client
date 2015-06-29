@@ -11,11 +11,17 @@ This Meteor package encapsulates the NodeJs module "swagger-client" adding a syn
  - [The underlying JSON file](http://codebeautify.org/jsonviewer/ec183d)
  - [The NodeJS module `swagger-client` on GitHub](https://github.com/swagger-api/swagger-js)
 
+### jsDoc generated documentation 
+
+ - [documentation.md](./documentation.md)
+
 #### Notes to myself :
 
+ - env NODE_OPTIONS='--debug' DEBUG=wm:msc* meteor test-packages ./packages/meteor-swagger-client
+ - eslint package.js 
  - eslint meteor-swagger-client.js 
  - eslint tests/meteor-swagger-client-tests.js
- - rm -fr ./jsdoc/  &&  jsdoc ./meteor-swagger-client.js -d ./jsdoc
+ - rm -fr ./jsdoc/  && jsdoc ./*.js -p -d ./jsdoc  --readme ./README.md
  - the following in .bashrc
 
     * `export MONGO_URL="mongodb://?:?@ds?.mongolab.com:?/meteor-node-trello"`
