@@ -1,4 +1,5 @@
-# warehouseman:meteor-swagger-client
+# warehouseman:meteor-swagger-client  [![Build Status](https://travis-ci.org/warehouseman/meteor-swagger-client.svg?branch=master)](https://travis-ci.org/warehouseman/meteor-swagger-client)
+
 Specify the addresses of a RESTful server, and of its Swagger spec, and then immediately interact with it.
 
 Swagger is a powerful tool for creating REST APIs.  With a comprehensive JSON specification both client and server interfaces can be generated automatically.
