@@ -2,4 +2,6 @@
 .meteor/meteorite
 .npm
 jsdoc
+*~
+*.*~
 
