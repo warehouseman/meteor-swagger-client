@@ -97,6 +97,17 @@ Tinytest.add(
 );
 
 Tinytest.add(
+  title + 'Have an ID for client A object',
+  function haveBoardId(test) {
+    test.equal(
+      process.env.TRELLO_A_BOARD.length,
+      8,
+      'Need the ID of a user\'s Welcom Board in Trello'
+    );
+  }
+);
+
+Tinytest.add(
   title + 'Have a client proxy for site A',
   function havePrxy(test) {
     var nameHost = 'Trello API';
@@ -165,9 +176,6 @@ Tinytest.add(
         basicArguments
       , { responseContentType: 'application/json' }
     );
-    console.log(board);
-    console.log("MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  MWMWMWMW  ");
-    console.log(board.data);
 
     response = JSON.parse(board.data);
     infolog('Got the board :: ' + response.name);
