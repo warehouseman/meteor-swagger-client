@@ -1,7 +1,7 @@
 /*global Package Npm*/
 Package.describe({
   name: 'warehouseman:meteor-swagger-client',
-  version: '0.1.2',
+  version: '0.1.3',
   summary: 'Immediately interact with RESTful servers, given only'
   + ' their Swagger specification. (beta)',
   git: 'git@github.com:warehouseman/meteor-swagger-client.git',
@@ -11,7 +11,7 @@ Package.describe({
 Package.onUse(function onUse(api) {
   api.use('meteor-platform', ['server']);
   api.use('http', ['server']);
-//  api.use('meteorhacks:async', ['server']);
+
   api.versionsFrom('1.1.0.2');
 
   api.addFiles('meteor-swagger-client.js', ['server']);

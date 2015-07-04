@@ -42,7 +42,6 @@ Tinytest.add(
   }
 );
 
-
 Tinytest.add(
   title + 'Have an authentication token from user A: '
         + process.env.TRELLO_TOKEN_A,
@@ -54,6 +53,53 @@ Tinytest.add(
     );
   }
 );
+
+Tinytest.add(
+  title + 'Have the UID of user B',
+  function getUid(test) {
+    test.equal(
+      process.env.TRELLO_USER_B,
+      'bravowarehouseman',
+      'Need the user ID and an authorization token from three fictitious users'
+    );
+  }
+);
+
+Tinytest.add(
+  title + 'Have an authentication token from user B: '
+        + process.env.TRELLO_TOKEN_B,
+  function getTkn(test) {
+    test.equal(
+      process.env.TRELLO_TOKEN_B.length,
+      64,
+      'Need the user ID and an authorization token from three fictitious users'
+    );
+  }
+);
+
+Tinytest.add(
+  title + 'Have the UID of user C',
+  function getUid(test) {
+    test.equal(
+      process.env.TRELLO_USER_C,
+      'charliewarehouseman',
+      'Need the user ID and an authorization token from three fictitious users'
+    );
+  }
+);
+
+Tinytest.add(
+  title + 'Have an authentication token from user C: '
+        + process.env.TRELLO_TOKEN_C,
+  function getTkn(test) {
+    test.equal(
+      process.env.TRELLO_TOKEN_C.length,
+      64,
+      'Need the user ID and an authorization token fromthree fictitious users'
+    );
+  }
+);
+
 
 Tinytest.add(
   title + 'Have the URL of Swagger specification for site A',
@@ -208,4 +254,16 @@ Tinytest.add(
       , 'Expected :: >' + expected + '< vs >' + response + '<');
   }
 );
+
+Tinytest.add(
+  title + 'Can get help for site A spec',
+  function getHelpA(test) {
+    var nameHost = 'Trello API';
+    var host = SwaggerClients.getHost(nameHost);
+    var frag = 'operations for the';
+    test.isTrue(host.proxy.help(true).indexOf(frag) > -1
+      , 'Top level Swagger should contain "' + frag + '"');
+  }
+);
+
 
