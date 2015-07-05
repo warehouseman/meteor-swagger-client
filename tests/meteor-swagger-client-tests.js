@@ -142,13 +142,40 @@ Tinytest.add(
   }
 );
 
+
+Tinytest.add(
+  title + 'Can get sync help for site A spec',
+  function getHelpA(test) {
+    var nameHost = 'Trello API';
+    var host = SwaggerClients.getHost(nameHost);
+    var frag = 'operations for the';
+    var help = host.proxy.help(true);
+    infolog('Board help :: %s', help);
+    test.isTrue(help.indexOf(frag) > -1
+      , 'Top level Swagger help should contain "' + frag + '"');
+  }
+);
+
+Tinytest.add(
+  title + 'Can get sync help for a site A entity',
+  function getHelpABoard(test) {
+    var nameHost = 'Trello API';
+    var host = SwaggerClients.getHost(nameHost);
+    var frag = 'updateBoards: updateBoards()';
+    var help = host.proxy.board.help(true);
+    infolog('Board help :: %s', help);
+    test.isTrue(help.indexOf(frag) > -1
+      , 'Board help should contain "' + frag + '"');
+  }
+);
+
 Tinytest.add(
   title + 'Have an ID for client A object',
   function haveBoardId(test) {
     test.equal(
       process.env.TRELLO_A_BOARD.length,
       8,
-      'Need the ID of a user\'s Welcom Board in Trello'
+      'Need the ID of a user\'s Welcome Board in Trello'
     );
   }
 );
@@ -172,7 +199,7 @@ const basicArguments = {
 };
 
 Tinytest.add(
-  title + 'Can get a "board" from Alpha\'s account',
+  title + 'Can get a "board" from Alpha\'s account (asynchronous)',
   function getBoardForA(test) {
     var nameHost = 'Trello API';
     var host = SwaggerClients.getHost(nameHost);
@@ -208,7 +235,7 @@ Tinytest.add(
 
 
 Tinytest.add(
-  title + 'Can get object A from user A\'s account',
+  title + 'Can get object A from user A\'s account (synchronous)',
   function getObj(test) {
     var nameHost = 'Trello API';
     var response = null;
@@ -255,15 +282,40 @@ Tinytest.add(
   }
 );
 
+
 Tinytest.add(
-  title + 'Can get help for site A spec',
-  function getHelpA(test) {
+  title + 'Can list ids of from user A\'s boards (synchronous)',
+  function getObj(test) {
     var nameHost = 'Trello API';
+    var response = null;
     var host = SwaggerClients.getHost(nameHost);
-    var frag = 'operations for the';
-    test.isTrue(host.proxy.help(true).indexOf(frag) > -1
-      , 'Top level Swagger should contain "' + frag + '"');
+    var boards = null;
+    var boardIds = [];
+    var testName = 'Welcome Board';
+    var expected = process.env.TRELLO_A_BOARD;
+    var found = -1;
+    var idx = found;
+
+    basicArguments.idMember = 'me';
+
+    response = host.sync.member.getMembersBoardsByIdMember(
+        basicArguments
+      , { responseContentType: 'application/json' }
+    );
+
+    boards = JSON.parse(response.data);
+
+    boards.forEach(function collectBoardIds(board) {
+        infolog('Board :: ' + board);
+        boardIds.push(board.shortLink);
+        ++idx;
+        if ( board.name === testName ) found = idx;
+      }
+    );
+
+    infolog('Got the board :: ' + boardIds[found]);
+
+    test.equal(boardIds[found], expected
+      , 'Expected :: ' + expected);
   }
 );
-
-
