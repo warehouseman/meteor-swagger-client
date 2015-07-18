@@ -12,7 +12,7 @@
 
 <a name="module_meteor-swagger-client..SwaggerClients"></a>
 ### meteor-swagger-client~SwaggerClients : <code>object</code>
-The SwaggerClients class. 
+The SwaggerClients class.
 This is an <b>exported</b> global data structure able to hold proxies of
 numerous remote REST API hosts.  The original asynchronous methods generated
 by the NodeJS module 'swagger-client' are available as is, but also available

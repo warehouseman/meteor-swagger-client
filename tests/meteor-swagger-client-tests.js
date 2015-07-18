@@ -27,12 +27,23 @@ Tinytest.add(
 );
 
 Tinytest.add(
-  'Have my developer key :: ' + process.env.TRELLO_KEY,
+  'Have developer key :: ' + process.env.TRELLO_KEY.substring(0, 10) + ' . . .',
   function getKey(test) {
     test.equal(
       process.env.TRELLO_KEY.length,
       32,
       'This is the REST API developer access key'
+    );
+  }
+);
+
+Tinytest.add(
+  title + 'Have an ID for client A object',
+  function haveBoardId(test) {
+    test.equal(
+      process.env.TRELLO_A_WELCOME_BOARD.length,
+      8,
+      'Need the ID of a user\'s Welcome Board in Trello'
     );
   }
 );
@@ -320,17 +331,6 @@ Tinytest.add(
 
     test.isTrue(help.indexOf(frag) > -1
       , 'Board help should contain "' + frag + '"');
-  }
-);
-
-Tinytest.add(
-  title + 'Have an ID for client A object',
-  function haveBoardId(test) {
-    test.equal(
-      process.env.TRELLO_A_BOARD.length,
-      8,
-      'Need the ID of a user\'s Welcome Board in Trello'
-    );
   }
 );
 

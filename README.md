@@ -40,7 +40,7 @@ This Meteor package encapsulates the NodeJs module "swagger-client" adding a syn
     * `export TRELLO_KEY="dc7bb1d947  ???  d0a71245c7"`
     * `export TRELLO_USER_A="alphawarehouseman"`
     * `export TRELLO_TOKEN_A="fcbb1c7cf9d33ae54   ???   239e7def3c6eb0d5b53dfbd"`
-    * `export TRELLO_A_BOARD="KEEnUvSY"`
+    * `export TRELLO_A_WELCOME_BOARD="KEEnUvSY"`
     * `export TRELLO_SPEC="https://raw.githubusercontent.com/warehouseman/trello-swagger-generator/master/TrelloAPI.json"`
     * `# export TRELLO_SPEC="http://192.168.122.169:8000/TrelloAPI.json"`
     * `# export MONGO_URL="mongodb://?:?@ds?.mongolab.com:?/meteor-node-trello"`
