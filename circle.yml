@@ -10,7 +10,6 @@ machine:
 dependencies:
   override:
     - npm install selenium-webdriver
-    - meteor list
 test:
   override:
     - tests/test-all.sh
