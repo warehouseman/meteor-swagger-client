@@ -31,7 +31,7 @@
  * @requires swagger-client
  */
 
-/*global Npm Meteor SwaggerClients:true*/
+/* global Npm Meteor SwaggerClients:true */
 
 /**
  * @exports meteor-swagger-client.SwaggerClients
