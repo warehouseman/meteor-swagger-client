@@ -1,3 +1,5 @@
++DEPRECATED. This project is obsolete due to new features introduced in Meteor 1.3
+
 # warehouseman:meteor-swagger-client  [![Build Status](https://travis-ci.org/warehouseman/meteor-swagger-client.svg?branch=master)](https://travis-ci.org/warehouseman/meteor-swagger-client)
 
 Specify the addresses of a RESTful server, and of its Swagger spec, and then immediately interact with it.
